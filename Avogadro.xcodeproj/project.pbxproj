@@ -1,0 +1,215 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		462C2B5F166D639F00D5964A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 462C2B5E166D639F00D5964A /* main.cpp */; };
+		462C2B61166D639F00D5964A /* Avogadro.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 462C2B60166D639F00D5964A /* Avogadro.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		462C2B58166D639F00D5964A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				462C2B61166D639F00D5964A /* Avogadro.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		462C2B5A166D639F00D5964A /* Avogadro */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Avogadro; sourceTree = BUILT_PRODUCTS_DIR; };
+		462C2B5E166D639F00D5964A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		462C2B60166D639F00D5964A /* Avogadro.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Avogadro.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		462C2B57166D639F00D5964A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		462C2B4F166D639F00D5964A = {
+			isa = PBXGroup;
+			children = (
+				462C2B5D166D639F00D5964A /* Avogadro */,
+				462C2B5B166D639F00D5964A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		462C2B5B166D639F00D5964A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				462C2B5A166D639F00D5964A /* Avogadro */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		462C2B5D166D639F00D5964A /* Avogadro */ = {
+			isa = PBXGroup;
+			children = (
+				462C2B5E166D639F00D5964A /* main.cpp */,
+				462C2B60166D639F00D5964A /* Avogadro.1 */,
+			);
+			path = Avogadro;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		462C2B59166D639F00D5964A /* Avogadro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 462C2B64166D639F00D5964A /* Build configuration list for PBXNativeTarget "Avogadro" */;
+			buildPhases = (
+				462C2B56166D639F00D5964A /* Sources */,
+				462C2B57166D639F00D5964A /* Frameworks */,
+				462C2B58166D639F00D5964A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Avogadro;
+			productName = Avogadro;
+			productReference = 462C2B5A166D639F00D5964A /* Avogadro */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		462C2B51166D639F00D5964A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Moshe Berman";
+			};
+			buildConfigurationList = 462C2B54166D639F00D5964A /* Build configuration list for PBXProject "Avogadro" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 462C2B4F166D639F00D5964A;
+			productRefGroup = 462C2B5B166D639F00D5964A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				462C2B59166D639F00D5964A /* Avogadro */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		462C2B56166D639F00D5964A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				462C2B5F166D639F00D5964A /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		462C2B62166D639F00D5964A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		462C2B63166D639F00D5964A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		462C2B65166D639F00D5964A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		462C2B66166D639F00D5964A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		462C2B54166D639F00D5964A /* Build configuration list for PBXProject "Avogadro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				462C2B62166D639F00D5964A /* Debug */,
+				462C2B63166D639F00D5964A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		462C2B64166D639F00D5964A /* Build configuration list for PBXNativeTarget "Avogadro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				462C2B65166D639F00D5964A /* Debug */,
+				462C2B66166D639F00D5964A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 462C2B51166D639F00D5964A /* Project object */;
+}
