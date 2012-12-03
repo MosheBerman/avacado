@@ -22,7 +22,11 @@ double atomicWeight[MAX_NUMBER];
 //  Function Prototypes
 //
 
-
+void bubbleSort(std::string[], int, double, int);
+void printTable(std::string[], int, double, int);
+double numberOfGramsPerMole(std::string molecularFormula);
+double calculateNumberOfParticles(double, double);
+double massNumberForElement(std::string);
 
 //
 //
