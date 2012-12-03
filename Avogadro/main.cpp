@@ -8,6 +8,26 @@
 
 #include <iostream>
 
+//
+//  Data Arrays
+//
+
+const int MAX_NUMBER = 130;
+
+std::string atomicSymbol[MAX_NUMBER];
+int atomicNumber[MAX_NUMBER];
+double atomicWeight[MAX_NUMBER];
+
+//
+//  Function Prototypes
+//
+
+
+
+//
+//
+//
+
 int main(int argc, const char * argv[])
 {
 
