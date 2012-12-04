@@ -82,6 +82,56 @@ int main(int argc, const char * argv[])
     printTable(atomicSymbol, atomicNumber, atomicMass, numberOfElements);
     
     //
+    //  Declare the variables necessary for the
+    //  calculation we want to prepare.
+    //
+    
+    std::string molecularFormula = "";
+    
+    double weight = 0.0;
+    double gramsPerMole = 0.0;
+    double numberOfParticles = 0.0;
+    
+    //
+    //  Prompt the user for a molecular formula
+    //  and do stuff do it. Then take a nice nap.
+    //
+    
+    std::cout << std::endl;
+    std::cout << "Enter a molecular formula that you'd like to convert to moles. (Example: H2O)" << '\n';
+    std::cin >> molecularFormula;
+    std::cout << "Enter the weight in grams." << '\n';
+    std::cin >> weight;
+    
+    //
+    //  Run some complex calculations.
+    //  Reticulate splines.
+    //
+    
+    gramsPerMole = numberOfGramsPerMole(molecularFormula);
+    numberOfParticles = calculateNumberOfParticles(weight, gramsPerMole);
+    
+    //
+    //  Output the results and rejoice.
+    //
+    
+    std::cout << "The number of molecules in ";
+    std::cout << weight;
+    std::cout << " grams of ";
+    std::cout << molecularFormula;
+    std::cout << " is ";
+    std::cout << numberOfParticles;
+    std::cout << "." << std::endl;
+    
+    outputFile << "The number of molecules in ";
+    outputFile << weight;
+    outputFile << " grams of ";
+    outputFile << molecularFormula;
+    outputFile << " is ";
+    outputFile << numberOfParticles;
+    outputFile << "." << std::endl;
+    
+    //
     //  Remember to close our files.
     //
     
@@ -219,9 +269,11 @@ double numberOfGramsPerMole(std::string molecularFormula){
     //
     
     
+    
     //
     //  Do the math
     //
+    
     
 }
 
