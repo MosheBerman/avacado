@@ -343,6 +343,11 @@ double numberOfGramsPerMole(std::string molecularFormula, std::string atomicSymb
         
         numberOfGramsPerMole += atomicWeight * numberOfMoleculesToMultiply;
 
+        //
+        //
+        //
+        
+        
     }
     
     return numberOfGramsPerMole;
