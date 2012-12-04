@@ -22,7 +22,7 @@ const int MAX_NUMBER = 130;
 int readPeriodicTable(std::string[], int[], double[], int);
 void bubbleSort(std::string[], int[], double[], int);
 void printTable(std::string[], int[], double[], int);
-double numberOfGramsPerMole(std::string molecularFormula);
+double numberOfGramsPerMole(std::string molecularFormula, std::string[], int[], int);
 double calculateNumberOfParticles(double, double);
 double massNumberForElement(std::string);
 
@@ -99,7 +99,7 @@ int main(int argc, const char * argv[])
     
     std::cout << std::endl;
     std::cout << "Enter a molecular formula that you'd like to convert to moles. (Example: H2O)" << '\n';
-    std::cin >> molecularFormula;
+    getline(std::cin, molecularFormula);
     std::cout << "Enter the weight in grams." << '\n';
     std::cin >> weight;
     
@@ -262,19 +262,52 @@ void printTable(std::string atomicSymbol[], int atomicNumber[], double atomicMas
 //  mole of a given molecule.
 //
 
-double numberOfGramsPerMole(std::string molecularFormula){
+double numberOfGramsPerMole(std::string molecularFormula, std::string atomicSymbols[], int atomicWeights[], int numberOfElements){
+    
+    //
+    //  Declare variables to work with
+    //
+    
+    int numberOfMolecules = 1;
+    double atomicWeight = 0.0;
+    double numberOfGramsPerMole = 0.0;
     
     //
     //  Parse the string
     //
     
+    std::string formulaToProcess = molecularFormula;
     
+    while(formulaToProcess.length() > 0){
+        
+        //
+        //  Loop through each element in atomic symbols and
+        //  see if there's a match AT POSITION ZERO.
+        //
+        
+        //
+        //  Pull out the atomic weight.
+        //
+        
+        //
+        //  We see what the next character is.
+        //  If it's a number, then set that number to
+        //  numberOfMolecules.
+        //
+        
+        //
+        //  Multiply the number of molecules by
+        //  the atomic weight.
+        //
+        
+        //
+        //  Add it to the number of grams per mole.
+        //
+        
+        
+    }
     
-    //
-    //  Do the math
-    //
-    
-    
+    return numberOfGramsPerMole;
 }
 
 //
