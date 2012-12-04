@@ -22,7 +22,7 @@ const int MAX_NUMBER = 130;
 int readPeriodicTable(std::string[], int[], double[], int);
 void bubbleSort(std::string[], int[], double[], int);
 void printTable(std::string[], int[], double[], int);
-double numberOfGramsPerMole(std::string molecularFormula, std::string[], int[], int);
+double numberOfGramsPerMole(std::string, std::string [], double[], int);
 double calculateNumberOfParticles(double, double);
 double massNumberForElement(std::string);
 
@@ -108,7 +108,7 @@ int main(int argc, const char * argv[])
     //  Reticulate splines.
     //
     
-    gramsPerMole = numberOfGramsPerMole(molecularFormula);
+    gramsPerMole = numberOfGramsPerMole(molecularFormula, atomicSymbol, atomicMass, numberOfElements);
     numberOfParticles = calculateNumberOfParticles(weight, gramsPerMole);
     
     //
@@ -262,13 +262,13 @@ void printTable(std::string atomicSymbol[], int atomicNumber[], double atomicMas
 //  mole of a given molecule.
 //
 
-double numberOfGramsPerMole(std::string molecularFormula, std::string atomicSymbols[], int atomicWeights[], int numberOfElements){
+double numberOfGramsPerMole(std::string molecularFormula, std::string atomicSymbols[], double atomicWeights[], int numberOfElements){
     
     //
     //  Declare variables to work with
     //
     
-    int numberOfMolecules = 1;
+    int numberOfMoleculesToMultiply = 1;
     double atomicWeight = 0.0;
     double numberOfGramsPerMole = 0.0;
     
@@ -285,9 +285,31 @@ double numberOfGramsPerMole(std::string molecularFormula, std::string atomicSymb
         //  see if there's a match AT POSITION ZERO.
         //
         
-        //
-        //  Pull out the atomic weight.
-        //
+        size_t position;
+        std::string element = "";
+        
+        for (int currentElement = 0; currentElement < numberOfElements; currentElement++) {
+            
+            element = atomicSymbols[currentElement];
+            position = formulaToProcess.find(element);
+            
+            //
+            //  If the position is zero, we have match.
+            //
+            
+            if (position == 0) {
+                
+                atomicWeight = atomicWeights[currentElement];
+                formulaToProcess = formulaToProcess.substr(position, formulaToProcess.length() - position);
+                break;
+            }
+            
+        }
+        
+        if (position == std::string::npos) {
+            std::cout << "Can't find the element " << element << "." << std::endl;
+            exit(1);
+        }
         
         //
         //  We see what the next character is.
@@ -295,16 +317,32 @@ double numberOfGramsPerMole(std::string molecularFormula, std::string atomicSymb
         //  numberOfMolecules.
         //
         
+        int numberOfMolecules = 1;
+        
+        if (isnumber(formulaToProcess[0])) {
+            numberOfMolecules = formulaToProcess[0];
+            formulaToProcess = formulaToProcess.substr(1, formulaToProcess.length()-1);
+        }
+        
+        //
+        //  Pull out the next numbers
+        //
+        
+        while (isnumber(formulaToProcess[0])) {
+            numberOfMolecules *=10;
+            numberOfMolecules += formulaToProcess[0];
+            formulaToProcess = formulaToProcess.substr(1, formulaToProcess.length()-1);
+        }
+        
+        numberOfMoleculesToMultiply = numberOfMolecules;
+        
         //
         //  Multiply the number of molecules by
         //  the atomic weight.
         //
         
-        //
-        //  Add it to the number of grams per mole.
-        //
-        
-        
+        numberOfGramsPerMole += atomicWeight * numberOfMoleculesToMultiply;
+
     }
     
     return numberOfGramsPerMole;
