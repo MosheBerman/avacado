@@ -8,7 +8,6 @@
 
 #include <iostream>
 #include <fstream>
-#include <iomanip>
 
 //
 //  The max number of elements we support.
@@ -223,7 +222,6 @@ double numberOfGramsPerMole(std::string molecularFormula){
     //
     //  Do the math
     //
-    
     
 }
 
