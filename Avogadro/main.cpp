@@ -98,7 +98,7 @@ int main(int argc, const char * argv[])
     //
     
     std::cout << std::endl;
-    std::cout << "Enter a molecular formula that you'd like to convert to moles. (Example: H2O)" << '\n';
+    std::cout << "Enter a molecular formula that you'd like to convert to moles. (Example: H2O)";
     getline(std::cin, molecularFormula);
     std::cout << "Enter the weight in grams." << '\n';
     std::cin >> weight;
@@ -276,41 +276,37 @@ double numberOfGramsPerMole(std::string molecularFormula, std::string atomicSymb
     //  Parse the string
     //
     
-    std::string formulaToProcess = molecularFormula;
-    
-    while(formulaToProcess.length() > 0){
+    while(molecularFormula.length() > 0){
         
         //
         //  Loop through each element in atomic symbols and
         //  see if there's a match AT POSITION ZERO.
         //
         
-        size_t position;
         std::string element = "";
         
         for (int currentElement = 0; currentElement < numberOfElements; currentElement++) {
             
-            element = atomicSymbols[currentElement];
-            position = formulaToProcess.find(element);
+            size_t position = molecularFormula.find(atomicSymbols[currentElement]);
             
             //
             //  If the position is zero, we have match.
             //
             
             if (position == 0) {
-                
+                element = atomicSymbols[currentElement];
                 atomicWeight = atomicWeights[currentElement];
-                formulaToProcess = formulaToProcess.substr(position, formulaToProcess.length() - position);
+                molecularFormula = molecularFormula.substr(1, molecularFormula.length() - 1);
+                
                 break;
             }
-            
         }
         
-        if (position == std::string::npos) {
-            std::cout << "Can't find the element " << element << "." << std::endl;
+        if (element == "") {
+            std::cout << "Failed to find one or more elements in your compound. " << std::endl;
             exit(1);
         }
-        
+               
         //
         //  We see what the next character is.
         //  If it's a number, then set that number to
@@ -319,19 +315,19 @@ double numberOfGramsPerMole(std::string molecularFormula, std::string atomicSymb
         
         int numberOfMolecules = 1;
         
-        if (isnumber(formulaToProcess[0])) {
-            numberOfMolecules = formulaToProcess[0];
-            formulaToProcess = formulaToProcess.substr(1, formulaToProcess.length()-1);
+        if (isnumber(molecularFormula[0])) {
+            numberOfMolecules = molecularFormula[0];
+            molecularFormula = molecularFormula.substr(1, molecularFormula.length()-1);
         }
         
         //
         //  Pull out the next numbers
         //
         
-        while (isnumber(formulaToProcess[0])) {
+        while (isnumber(molecularFormula[0])) {
             numberOfMolecules *=10;
-            numberOfMolecules += formulaToProcess[0];
-            formulaToProcess = formulaToProcess.substr(1, formulaToProcess.length()-1);
+            numberOfMolecules += molecularFormula[0];
+            molecularFormula = molecularFormula.substr(1, molecularFormula.length()-1);
         }
         
         numberOfMoleculesToMultiply = numberOfMolecules;
